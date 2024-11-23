@@ -19,7 +19,7 @@
           </v-col>
         </v-row>
       </v-container>
-      <v-list nav>
+      <v-list nav dense>
         <v-list-item
           v-for="navItem in navItems"
           :key="navItem.name"
@@ -40,6 +40,31 @@
           </v-chip>
         </v-list-item>
       </v-list>
+      <v-layout row style="position: absolute; bottom: 0; width: 100%">
+        <v-flex md-10 class="mb-3">
+          <v-list-item dense>
+            <v-list-item-avatar class="ml-2">
+              <v-img src="woman.png"></v-img>
+            </v-list-item-avatar>
+            <v-list-item-action class="ml-8">
+              <v-badge color="error" overlap>
+                <template slot="badge"> 3 </template>
+                <v-icon color="tertiary">mdi-bell</v-icon>
+              </v-badge>
+            </v-list-item-action>
+          </v-list-item>
+        </v-flex>
+        <v-flex md-2>
+          <v-tooltip top>
+            <template v-slot:activator="{ on }">
+              <v-btn text icon v-on="on" class="mt-2">
+                <v-icon dark right>fas fa-sign-out-alt</v-icon>
+              </v-btn>
+            </template>
+            <span>Exit</span>
+          </v-tooltip>
+        </v-flex>
+      </v-layout>
     </v-navigation-drawer>
   </nav>
 </template>
@@ -55,7 +80,7 @@ export default {
 
     navItems: [
       { icon: "fas fa-tachometer-alt", name: "Dashboard", path: "" },
-      { icon: "fas fa-users", name: "Applicants", path: "applicants" },
+      { icon: "fas fa-users", name: "Applicants", path: "applicantsview" },
       { icon: "fas fa-briefcase", name: "Jobs", path: "jobs" },
       { icon: "fas fa-calendar-alt", name: "Calender", path: "calender" },
       { icon: "fas fa-clipboard-list", name: "Reports", path: "reports" },

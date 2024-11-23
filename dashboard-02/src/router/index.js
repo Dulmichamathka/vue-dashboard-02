@@ -1,9 +1,15 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import ApplicantsView from "@/views/ApplicantsView.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
+  {
+    path: "/applicantsview",
+    name: "ApplicantsView",
+    component: ApplicantsView,
+  },
   {
     path: "/about",
     name: "about",
